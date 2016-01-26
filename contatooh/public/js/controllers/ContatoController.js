@@ -20,7 +20,7 @@ angular.module('contatooh').controller('ContatoController',
 		}
 
 		$scope.salva = function() {
-			Contato.save()
+			$scope.contato.$save()
 			.then(function() {
 				$scope.mensagem = {texto: 'Salvo com sucesso'};
 			// limpa o formulário

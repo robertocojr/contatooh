@@ -4,6 +4,10 @@
 </p>
 <form ng-submit="salva()">
   <div class="form-group">
+    <label for="id">Código</label>
+    <input type="text" class="form-control" id="id" name="id" required ng-model="contato._id">
+  </div>
+  <div class="form-group">
     <label for="nome">Nome completo</label>
     <input type="text" class="form-control" id="nome" name="nome" required ng-model="contato.nome">
   </div>

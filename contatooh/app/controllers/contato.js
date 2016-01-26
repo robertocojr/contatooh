@@ -30,9 +30,7 @@ var controller = {
 		var contato = contatos.filter(function(contato){
 			return contato._id == idContato;
 		})[0];
-		contato ?
-		res.json(contato):
-		res.status(404).send('Contato não encontrado');
+		contato ? res.json(contato): res.status(404).send('Contato não encontrado');
 	},
 	removeContato: function(req, res){
 		var idContato = req.params.id;
@@ -45,8 +43,9 @@ var controller = {
 		res.send(204).end();
 	},
 	salvaContato: function(req, res){
-		var contato = req.body;
-		contato = contato._id ? atualiza(contato) : adiciona(contato);
+		var contato = req.body.contato;
+		console.log('API: salvar/atualizar: '+ contato);
+		contato._id ? atualiza(contato) : adiciona(contato);
 	}
 }
 module.exports = controller;

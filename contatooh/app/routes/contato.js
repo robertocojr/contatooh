@@ -10,5 +10,4 @@ module.exports = function(app){
 		.get(controller.obtemContato)
 		.delete(controller.removeContato);
 
-	// app.post('/contatos', controller.salvaContato);
 };
