@@ -16,7 +16,7 @@ angular.module('contatooh').controller('ContatoController',
 				}
 			);
 		}else {
-			$scope.contato = {};
+			$scope.contato = new Contato();
 		}
 
 		$scope.salva = function() {

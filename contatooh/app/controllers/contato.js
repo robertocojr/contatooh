@@ -43,7 +43,7 @@ var controller = {
 		res.send(204).end();
 	},
 	salvaContato: function(req, res){
-		var contato = req.body.contato;
+		var contato = req.body;
 		console.log('API: salvar/atualizar: '+ contato);
 		contato._id ? atualiza(contato) : adiciona(contato);
 	}
