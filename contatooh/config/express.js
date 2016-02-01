@@ -28,6 +28,5 @@ module.exports = function() {
 	// Adiciona method-override
 	app.use(express.static('./public'));
 
-
 	return app;
 }
