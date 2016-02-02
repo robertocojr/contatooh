@@ -1,5 +1,5 @@
 angular.module('contatooh').controller('ContatosController',
-	function($scope, $resource, $http){
+	function($scope, Contato){
 		$scope.total = 0;
 
 		$scope.incrementa = function() {
@@ -11,8 +11,6 @@ angular.module('contatooh').controller('ContatosController',
 		$scope.filtro = '';
 
 		$scope.message = {texto: ''};
-
-		var Contato = $resource('/contatos/:id');
 
 		function buscaContatos(){
 			Contato.query(
