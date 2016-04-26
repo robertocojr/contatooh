@@ -18,7 +18,7 @@ module.exports = function(app){
 		var _id = req.params.id;
 		Contato.findById(_id).exec()
 		.then(function(contato){
-			if(!contato) throw new Error("Contato n„o encontrado");
+			if(!contato) throw new Error("Contato n√£o encontrado");
 			res.json(contato);
 		}, function(erro){
 			console.log(erro);
