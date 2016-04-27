@@ -4,9 +4,10 @@ var session = require('express-session');
 var passport = require('passport');
 
 var express = require('express');
-//var home = require('../app/routes/home');
 var load = require('express-load');
 var bodyParser = require('body-parser');
+
+var helmet = require('helmet')
 
 module.exports = function() {
 	var app = express();
@@ -36,6 +37,13 @@ module.exports = function() {
 	app.use(passport.initialize());
 	app.use(passport.session());
 
+	app.use(helmet());
+	// app.disable('x-powered-by');
+	app.use(helmet.hidePoweredBy({setTo: 'PHP 5.5.14'}))
+	app.use(helmet.xframe());
+	app.use(helmet.xssFilter());
+	app.use(helmet.nosniff());
+
 	//Adicionando rota para index.ejs
 	load('models', {cwd: 'app'})
 	.then('controllers')
@@ -45,6 +53,10 @@ module.exports = function() {
 
 	// Adiciona method-override
 	app.use(express.static('./public'));
+
+	app.get('*', function(req, res){
+		res.status(404).render('404');
+	});
 
 	return app;
 }
