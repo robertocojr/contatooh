@@ -2,11 +2,11 @@ var mongoose = require('mongoose');
 
 module.exports = function(){
   var schema = mongoose.Schema({
-    nome:{
+    nome: {
       type: String,
       required: true
     },
-    email:{
+    email: {
       type: String,
       required: true,
       index: {
