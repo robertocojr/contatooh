@@ -16,7 +16,7 @@ module.exports = function() {
 	app.use(require('method-override')());
 
 	// Condig. de Porta
-	app.set('port', 80);
+	app.set('port', 5000);
 
 	// Config. conteúdo público
 	app.use(express.static('../public'));
