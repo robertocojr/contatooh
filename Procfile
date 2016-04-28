@@ -1,3 +1,1 @@
-web: node index.js
-
-
+web: sh ./web.sh
