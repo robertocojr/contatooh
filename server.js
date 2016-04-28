@@ -5,7 +5,7 @@ var app = express();
 require('./config/passport')();
 require('./config/database')('mongodb://localhost/contatooh');
 
-const port = process.env.PORT || app.get('port')
+const port = app.get('port')
 
 http.createServer(app).listen(port, function(){
 	console.log('Express Server escutando na porta ' + app.get('port'));
